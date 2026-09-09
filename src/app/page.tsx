@@ -20,11 +20,10 @@ export default async function HomePage() {
     <>
       {/* Hero — asymmetric, energetic, not a cookie-cutter centered block */}
       <Section className="relative overflow-hidden bg-brand-950 text-white">
-        <div aria-hidden className="absolute inset-0 kente-geometric" />
         <div className="relative grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div>
-            <p className="inline-block rounded-full bg-volt-500/20 px-4 py-1.5 text-sm font-semibold text-volt-400">
-              🇬🇭 Youth-led · Adenta, Accra
+            <p className="inline-block rounded-full border border-volt-500/30 bg-volt-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-volt-400">
+              Youth-led · Adenta, Accra
             </p>
             <h1 className="mt-6 max-w-2xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               We don&apos;t wait for permission.

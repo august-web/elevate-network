@@ -104,7 +104,9 @@ find everything the team should replace.
 
 - [x] **Phase 0 — Foundation** — scaffold, design tokens, core UI components,
       Sanity client with graceful empty state, env/README.
-- [ ] **Phase 1 — Core pages** — Home, About, Programs, Contact.
+- [x] **Phase 1 — Core pages** — Home (hero + impact stats + CTA), About
+      (founder story, values, team), Programs (STEM tours, festivals, camps),
+      Contact (form placeholder, email, socials).
 - [ ] **Phase 2 — Dynamic content** — Events, Blog, Donate, newsletter,
       Sanity Studio + seed content.
 - [ ] **Phase 3 — Polish & ship** — SEO, performance, deploy guide for

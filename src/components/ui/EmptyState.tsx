@@ -22,12 +22,6 @@ export function EmptyState({
         className,
       )}
     >
-      <span
-        aria-hidden
-        className="grid size-12 place-items-center rounded-2xl bg-volt-500 text-2xl text-brand-950"
-      >
-        ✦
-      </span>
       <h3 className="font-display text-xl font-bold text-brand-900">
         {title}
       </h3>

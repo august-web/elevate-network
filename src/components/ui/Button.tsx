@@ -14,7 +14,7 @@ const variants = {
   /** Outlined button for dark (navy) sections. */
   outline:
     "border-2 border-white/90 bg-transparent text-white hover:bg-white hover:text-brand-950 focus-visible:outline-volt-500",
-  dark: "bg-brand-900 text-white hover:bg-brand-800 focus-visible:outline-volt-500",
+  dark: "bg-white text-brand-950 hover:bg-brand-100 focus-visible:outline-volt-500",
   ghost:
     "bg-transparent text-brand-900 underline decoration-volt-500 decoration-2 underline-offset-4 hover:text-brand-700",
 } as const;

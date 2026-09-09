@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elevate Network — Official Website
 
-## Getting Started
+The official website for **Elevate Network**, a youth-led nonprofit in Adenta,
+Accra, Ghana, empowering the next generation of Ghanaian leaders,
+entrepreneurs and innovators through mentorship, STEM education and bold youth
+events.
 
-First, run the development server:
+Built with **Next.js (App Router) + TypeScript (strict) + Tailwind CSS**, with
+Sanity CMS powering all dynamic content.
+
+## Stack
+
+| Concern      | Choice                                                        |
+| ------------ | ------------------------------------------------------------- |
+| Framework    | Next.js 16 (App Router), React 19                             |
+| Language     | TypeScript (strict)                                           |
+| Styling      | Tailwind CSS v4 (design tokens in `src/app/globals.css`)      |
+| Fonts        | Space Grotesk (headings), Inter (body) via `next/font`        |
+| CMS          | Sanity (free tier) — schemas: `post`, `event`, `program`, `teamMember` |
+| Forms        | Tally.so embeds (no custom backend)                           |
+| Donations    | Paystack payment-page link (button only)                      |
+| Newsletter   | Buttondown / Mailchimp embed                                  |
+| Analytics    | Vercel Analytics                                              |
+| Hosting      | Vercel (free tier), custom domain + auto SSL                  |
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in your values (see below)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev        # dev server
+npm run lint       # ESLint
+npm run typecheck  # tsc --noEmit
+npm run build      # production build (runs lint + type checks)
+npm run start      # serve the production build
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+All values live in `.env.local` (see `.env.example`). Never hardcode them.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable                        | Required | Description                                          |
+| ------------------------------- | -------- | ---------------------------------------------------- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | yes      | Sanity project id (public)                           |
+| `NEXT_PUBLIC_SANITY_DATASET`    | no       | Defaults to `production`                             |
+| `SANITY_API_READ_TOKEN`         | no       | Server-only read token (Viewer permission)           |
+| `NEXT_PUBLIC_PAYSTACK_DONATE_URL` | no     | Paystack payment page URL for donations              |
+| `NEXT_PUBLIC_TALLY_EVENT_FORM_URL` | no    | Tally.so registration form URL                       |
+| `NEXT_PUBLIC_NEWSLETTER_URL`    | no       | Buttondown/Mailchimp embed endpoint                  |
+| `NEXT_PUBLIC_SITE_URL`          | no       | Production domain for metadata/OG/sitemap            |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> The site builds and renders **without** any env vars set — Sanity-dependent
+> sections show a graceful empty state instead of breaking. Set the Sanity
+> vars to go live with content.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+  app/                  # App Router pages + root layout
+  components/
+    layout/             # Navbar, Footer
+    ui/                 # Button, Card, Section, EmptyState, PagePlaceholder
+  lib/
+    site.ts             # org identity, links, env-driven URLs
+    sanity.ts           # Sanity client + queries (graceful empty state)
+    utils.ts            # cn() helper
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Design tokens (colors, fonts, African-print pattern utility) live in
+`src/app/globals.css`.
+
+## Content management
+
+Content (programs, events, posts, team members) is edited in **Sanity
+Studio** — embedded at `/studio` from Phase 2. Pages are statically generated
+with ISR, so published changes appear on the site without redeploying code.
+
+**Placeholders:** where real copy/images are missing you'll find a
+`TODO:content` comment in the code — search the repo for `TODO:content` to
+find everything the team should replace.
+
+## Deploying to Vercel
+
+1. Push this repository to GitHub.
+2. In Vercel, **Add New → Project** and import the repo (framework is
+   auto-detected as Next.js).
+3. Add the environment variables from `.env.example` in
+   **Settings → Environment Variables** (all environments).
+4. **Deploy.** Vercel builds with `npm run build` and serves the result.
+5. Custom domain: **Settings → Domains** → add `elevatenetworkhq.com` and
+   follow the DNS instructions (Vercel issues the SSL certificate
+   automatically).
+
+## Phase status
+
+- [x] **Phase 0 — Foundation** — scaffold, design tokens, core UI components,
+      Sanity client with graceful empty state, env/README.
+- [ ] **Phase 1 — Core pages** — Home, About, Programs, Contact.
+- [ ] **Phase 2 — Dynamic content** — Events, Blog, Donate, newsletter,
+      Sanity Studio + seed content.
+- [ ] **Phase 3 — Polish & ship** — SEO, performance, deploy guide for
+      non-technical editors.

@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ──────────────────────────────────────────────────────────────
+   Elevate Network — design tokens
+   Deep navy/purple base, electric yellow (volt) + orange (flame) accents
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  /* Deep navy / purple base */
+  --color-brand-50: #f3f1fb;
+  --color-brand-100: #e6e3f6;
+  --color-brand-200: #cbc5ee;
+  --color-brand-300: #a89de0;
+  --color-brand-400: #8373cd;
+  --color-brand-500: #6452b6;
+  --color-brand-600: #4d3c9b;
+  --color-brand-700: #3b2d7d;
+  --color-brand-800: #2a205c;
+  --color-brand-900: #1b1440;
+  --color-brand-950: #110c2a;
+
+  /* Electric yellow */
+  --color-volt-300: #fff06b;
+  --color-volt-400: #ffe33c;
+  --color-volt-500: #ffd60a;
+  --color-volt-600: #e6b800;
+
+  /* Orange */
+  --color-flame-400: #ff9d4d;
+  --color-flame-500: #ff7a00;
+  --color-flame-600: #e05f00;
+
+  /* Warm off-white page background */
+  --color-cream: #faf8f2;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Space Grotesk (headings) + Inter (body), loaded via next/font */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-brand-950);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Subtle African-print texture, layered over dark sections.
+   Pair with a navy/white section background. */
+.bg-african-pattern {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgb(255 214 10 / 0.08) 0 2px,
+      transparent 2px 24px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgb(255 122 0 / 0.06) 0 2px,
+      transparent 2px 24px
+    );
+}
+
+/* Accessible keyboard focus — visible on light surfaces.
+   Components on dark surfaces override with `focus-visible:outline-volt-500`. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-brand-700);
+  outline-offset: 2px;
 }

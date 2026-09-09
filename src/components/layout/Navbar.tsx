@@ -50,7 +50,7 @@ export function Navbar() {
           <span className="font-display text-lg font-bold tracking-tight text-brand-950">
             Elevate<span className="text-flame-500">.</span>Network
           </span>
-          <span className="ml-1 hidden rounded-full bg-volt-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-volt-600 sm:inline-block">
+          <span className="ml-1 hidden rounded-full bg-brand-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-700 sm:inline-block">
             Accra
           </span>
         </Link>

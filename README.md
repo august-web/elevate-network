@@ -66,6 +66,7 @@ All values live in `.env.local` (see `.env.example`). Never hardcode them.
 ```
 src/
   app/                  # App Router pages + root layout
+    studio/             # Sanity Studio setup guide
   components/
     layout/             # Navbar, Footer
     ui/                 # Button, Card, Section, EmptyState, PagePlaceholder
@@ -73,6 +74,8 @@ src/
     site.ts             # org identity, links, env-driven URLs
     sanity.ts           # Sanity client + queries (graceful empty state)
     utils.ts            # cn() helper
+sanity/
+  schemas/              # Sanity schemas: post, event, program, teamMember
 ```
 
 Design tokens (colors, fonts, African-print pattern utility) live in
@@ -107,7 +110,8 @@ find everything the team should replace.
 - [x] **Phase 1 — Core pages** — Home (hero + impact stats + CTA), About
       (founder story, values, team), Programs (STEM tours, festivals, camps),
       Contact (form placeholder, email, socials).
-- [ ] **Phase 2 — Dynamic content** — Events, Blog, Donate, newsletter,
-      Sanity Studio + seed content.
+- [x] **Phase 2 — Dynamic content** — Events (upcoming + past), Blog (posts
+      + categories), Donate (Paystack + impact tiers), newsletter placeholder,
+      Sanity schemas (post, event, program, teamMember), Studio route.
 - [ ] **Phase 3 — Polish & ship** — SEO, performance, deploy guide for
       non-technical editors.

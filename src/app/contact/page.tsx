@@ -41,7 +41,7 @@ export default function ContactPage() {
               We&apos;ll get back to you within 48 hours. Usually faster.
             </p>
             {/* TODO:content — Phase 2: Replace with real Tally.so embed */}
-            <div className="mt-6 rounded-3xl border-2 border-dashed border-brand-200 bg-brand-50 p-12 text-center">
+            <div className="mt-6 rounded-xl border-2 border-dashed border-brand-200 bg-brand-50 p-12 text-center">
               <p className="font-display text-lg font-bold text-brand-400">
                 Contact form coming soon
               </p>
@@ -64,7 +64,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <Card>
               <h3 className="font-display text-lg font-bold text-brand-950">
-                📧 Email
+                Email
               </h3>
               <a
                 href={`mailto:${site.email}`}
@@ -76,7 +76,7 @@ export default function ContactPage() {
 
             <Card>
               <h3 className="font-display text-lg font-bold text-brand-950">
-                📍 Location
+                Location
               </h3>
               <p className="mt-2 text-brand-600">{site.address}</p>
               <p className="text-sm text-brand-500">
@@ -86,14 +86,14 @@ export default function ContactPage() {
 
             <Card>
               <h3 className="font-display text-lg font-bold text-brand-950">
-                🌐 Socials
+                Socials
               </h3>
               <div className="mt-3 flex flex-wrap gap-3">
                 <a
                   href={site.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
+                  className="rounded-lg border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
                 >
                   Instagram
                 </a>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                   href={site.socials.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
+                  className="rounded-lg border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
                 >
                   Facebook
                 </a>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   href={site.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
+                  className="rounded-lg border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-100"
                 >
                   LinkedIn
                 </a>
@@ -118,7 +118,7 @@ export default function ContactPage() {
 
             <Card className="bg-brand-950 text-white">
               <h3 className="font-display text-lg font-bold text-white">
-                🤝 Want to partner?
+                Want to partner?
               </h3>
               <p className="mt-2 text-brand-200 text-sm leading-relaxed">
                 Schools, NGOs, tech companies, government agencies — if

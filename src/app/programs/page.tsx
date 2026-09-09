@@ -77,10 +77,8 @@ export default function ProgramsPage() {
                 <span
                   className={`rounded-full px-3 py-1 text-xs font-bold ${
                     program.status === "Active"
-                      ? "bg-green-100 text-green-700"
-                      : program.status.includes("Coming soon")
-                        ? "bg-volt-100 text-volt-600"
-                        : "bg-brand-100 text-brand-600"
+                      ? "bg-volt-500/20 text-brand-900"
+                      : "bg-brand-100 text-brand-700"
                   }`}
                 >
                   {program.status}
@@ -92,8 +90,8 @@ export default function ProgramsPage() {
               <p className="mt-4 flex-1 text-brand-700 leading-relaxed">
                 {program.description}
               </p>
-              <p className="mt-4 text-sm font-semibold text-brand-950">
-                📊 {program.impact}
+              <p className="mt-5 border-t border-brand-100 pt-4 text-sm font-semibold text-brand-950">
+                {program.impact}
               </p>
             </Card>
           ))}

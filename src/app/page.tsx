@@ -44,7 +44,7 @@ export default async function HomePage() {
             </div>
           </div>
           {/* Decorative stats sidebar — gives the hero weight and proof */}
-          <div className="hidden shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm lg:block">
+          <div className="hidden shrink-0 rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm lg:block">
             <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-volt-500">
               Our impact so far
             </p>

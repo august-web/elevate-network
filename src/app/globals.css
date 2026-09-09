@@ -47,19 +47,42 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Subtle African-print texture, layered over dark sections.
-   Pair with a navy/white section background. */
+/* Kente-inspired geometric pattern — layered, asymmetric, feels handcrafted.
+   Replaces the generic repeating-gradient "African print" that screams AI. */
+.kente-geometric {
+  background-image:
+    /* Diagonal stripes — gold */
+    repeating-linear-gradient(
+      45deg,
+      rgb(255 214 10 / 0.07) 0 2px,
+      transparent 2px 20px
+    ),
+    /* Counter-diagonal — orange */
+    repeating-linear-gradient(
+      -45deg,
+      rgb(255 122 0 / 0.05) 0 2px,
+      transparent 2px 20px
+    ),
+    /* Horizontal accent lines — subtle red */
+    repeating-linear-gradient(
+      0deg,
+      rgb(200 40 40 / 0.04) 0 1px,
+      transparent 1px 32px
+    );
+}
+
+/* Fallback for any remaining .bg-african-pattern references */
 .bg-african-pattern {
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgb(255 214 10 / 0.08) 0 2px,
-      transparent 2px 24px
+      rgb(255 214 10 / 0.07) 0 2px,
+      transparent 2px 20px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgb(255 122 0 / 0.06) 0 2px,
-      transparent 2px 24px
+      rgb(255 122 0 / 0.05) 0 2px,
+      transparent 2px 20px
     );
 }
 

@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Events" };
 export default function EventsPage() {
   return (
     <PagePlaceholder
-      title="Events — coming in Phase 2"
-      description="Upcoming events with Tally registration, plus past-event recaps and galleries, will live here."
+      title="Events — coming soon"
+      description="Where we actually meet. Workshops, festivals, hack nights — the things that don't fit in a PDF."
     />
   );
 }

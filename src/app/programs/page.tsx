@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Programs" };
 export default function ProgramsPage() {
   return (
     <PagePlaceholder
-      title="Programs — coming in Phase 1"
-      description="STEM school tours, the Power of You Festival, Campus Edition and Elevate Camp will be listed here."
+      title="Programs — coming soon"
+      description="STEM tours. Camps. Festivals. The real stuff that changes how young people see themselves."
     />
   );
 }

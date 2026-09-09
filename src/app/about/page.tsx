@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <PagePlaceholder
-      title="About us — coming in Phase 1"
-      description="Our story, founder profile, values, team grid and photo gallery will live here."
+      title="About us — coming soon"
+      description="Our story, the people behind this, and why we do what we do. Not a corporate 'About' page — a real one."
     />
   );
 }

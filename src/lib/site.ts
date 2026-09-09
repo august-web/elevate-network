@@ -6,10 +6,10 @@ export const site = {
   name: "Elevate Network",
   /** One-line description used in metadata. */
   tagline:
-    "Empowering young Ghanaians to build, lead and innovate — through mentorship, STEM education and bold youth events.",
-  /** Longer mission copy used in heroes. TODO:content — refine wording. */
+    "Youth-led nonprofit building the future of Ghana — one bold event, one classroom, one idea at a time.",
+  /** Longer mission copy used in heroes. */
   mission:
-    "Elevate Network is a youth-led nonprofit building an entrepreneurial culture among Ghanaian students and early-stage entrepreneurs — one bold event, classroom and idea at a time.",
+    "We're young Ghanaians who got tired of waiting for someone else to fix things. So we started building — mentorship programs, STEM workshops, festivals that actually matter. No imported blueprints. Just the work.",
   /** TODO:content — confirm the official contact email before launch. */
   email: "hello@elevatenetworkhq.com",
   address: "Adenta, Accra, Ghana",

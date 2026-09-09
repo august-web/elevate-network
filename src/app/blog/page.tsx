@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Blog" };
 export default function BlogPage() {
   return (
     <PagePlaceholder
-      title="Blog — coming in Phase 2"
-      description="News, stories and updates from the Sanity CMS will be listed here with category filters."
+      title="Blog — coming soon"
+      description="Stories from the ground. Event recaps, reflections, and the unfiltered truth about building something from scratch."
     />
   );
 }

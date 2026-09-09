@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Donate" };
 export default function DonatePage() {
   return (
     <PagePlaceholder
-      title="Donate — coming in Phase 2"
-      description="A prominent Paystack payment-page button will live here. Until then, use the Donate button in the navbar."
+      title="Donate — coming soon"
+      description="Every cedi counts. We'll show you exactly where your money goes — no black boxes."
     />
   );
 }

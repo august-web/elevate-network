@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Contact" };
 export default function ContactPage() {
   return (
     <PagePlaceholder
-      title="Contact — coming in Phase 1"
-      description="Tally form, email, socials and our Adenta, Accra address will live here."
+      title="Contact — coming soon"
+      description="Got something to say? We actually read these. Drop us a line."
     />
   );
 }

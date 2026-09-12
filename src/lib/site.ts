@@ -21,7 +21,6 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   donateUrl: process.env.NEXT_PUBLIC_PAYSTACK_DONATE_URL ?? null,
   tallyUrl: process.env.NEXT_PUBLIC_TALLY_EVENT_FORM_URL ?? null,
-  newsletterUrl: process.env.NEXT_PUBLIC_NEWSLETTER_URL ?? null,
 } as const;
 
 export const NAV_LINKS = [

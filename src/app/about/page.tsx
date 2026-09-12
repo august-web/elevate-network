@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/ui/Card";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Section } from "@/components/ui/Section";
+import { getTeamMembers, type TeamMember } from "@/lib/supabase";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description: `The story behind ${site.name} — why we exist, what we believe, and who's making it happen.`,
+  alternates: { canonical: "/about" },
 };
 
 const VALUES = [
@@ -31,25 +34,40 @@ const VALUES = [
   },
 ];
 
-const TEAM = [
-  {
-    name: "Augustine Asare",
-    role: "Founder & Lead",
-    bio: "Started Elevate because he was tired of watching talented young people leave Ghana because no one invested in them locally.",
-  },
-  {
-    name: "Team Member",
-    role: "Operations",
-    bio: "TODO:content — Add real team member.",
-  },
-  {
-    name: "Team Member",
-    role: "Programs",
-    bio: "TODO:content — Add real team member.",
-  },
-];
+// Revalidate every 5 minutes (ISR) so newly added team members appear
+// without a full redeploy. Must stay a literal.
+export const revalidate = 300;
 
-export default function AboutPage() {
+/** Render a team member's photo or a fallback initials badge. */
+function TeamAvatar({ member }: { member: TeamMember }) {
+  if (member.photo_url) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={member.photo_url}
+        alt={member.name}
+        className="h-16 w-16 rounded-full object-cover"
+        width={64}
+        height={64}
+      />
+    );
+  }
+
+  const initials = member.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
+
+  return (
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 font-display text-xl font-bold text-brand-600">
+      {initials}
+    </div>
+  );
+}
+
+export default async function AboutPage() {
+  const team = await getTeamMembers();
+
   return (
     <>
       {/* Hero — why we exist */}
@@ -138,24 +156,28 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((member) => (
-            <Card key={member.name}>
-              {/* Placeholder avatar — replace with real photos in Phase 2 */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 font-display text-xl font-bold text-brand-600">
-                {member.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-brand-950">
-                {member.name}
-              </h3>
-              <p className="text-sm font-medium text-flame-500">{member.role}</p>
-              <p className="mt-2 text-sm text-brand-700 leading-relaxed">
-                {member.bio}
-              </p>
-            </Card>
-          ))}
+          {team.length > 0 ? (
+            team.map((member) => (
+              <Card key={member.id}>
+                <TeamAvatar member={member} />
+                <h3 className="mt-4 font-display text-lg font-bold text-brand-950">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-medium text-flame-500">
+                  {member.role}
+                </p>
+                <p className="mt-2 text-sm text-brand-700 leading-relaxed">
+                  {member.bio}
+                </p>
+              </Card>
+            ))
+          ) : (
+            <EmptyState
+              title="Team members will appear here"
+              description="Once the Supabase dataset is connected and team members are added, they'll show up on this page automatically."
+              className="sm:col-span-2 lg:col-span-3"
+            />
+          )}
         </div>
       </Section>
     </>

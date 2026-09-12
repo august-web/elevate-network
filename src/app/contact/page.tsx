@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/Button";
+import { ContactForm } from "@/components/ContactForm";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { site } from "@/lib/site";
@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with ${site.name} — we actually read these.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -32,32 +33,27 @@ export default function ContactPage() {
       {/* Contact grid */}
       <Section>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          {/* Form area — Tally embed placeholder */}
-          <div>
+          {/* Form */}
+          <div className="flex flex-col">
             <h2 className="font-display text-2xl font-bold tracking-tight text-brand-950">
               Send us a message
             </h2>
             <p className="mt-2 text-brand-600">
               We&apos;ll get back to you within 48 hours. Usually faster.
             </p>
-            {/* TODO:content — Phase 2: Replace with real Tally.so embed */}
-            <div className="mt-6 rounded-xl border-2 border-dashed border-brand-200 bg-brand-50 p-12 text-center">
-              <p className="font-display text-lg font-bold text-brand-400">
-                Contact form coming soon
-              </p>
-              <p className="mt-2 text-sm text-brand-500">
-                We&apos;re setting up our Tally.so form. In the meantime, email
-                us directly — we read everything.
-              </p>
-              <Button
-                href={`mailto:${site.email}`}
-                variant="primary"
-                size="lg"
-                className="mt-6"
-              >
-                Email us →
-              </Button>
+            <div className="mt-6 flex-1">
+              <ContactForm />
             </div>
+            <p className="mt-4 text-sm text-brand-500">
+              Prefer email? Write to us directly at{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="underline decoration-volt-500 underline-offset-4 hover:text-brand-900"
+              >
+                {site.email}
+              </a>{" "}
+              — we read everything.
+            </p>
           </div>
 
           {/* Contact details */}
@@ -116,7 +112,7 @@ export default function ContactPage() {
               </div>
             </Card>
 
-            <Card className="bg-brand-950 text-white">
+            <Card tone="dark">
               <h3 className="font-display text-lg font-bold text-white">
                 Want to partner?
               </h3>

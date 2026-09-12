@@ -7,6 +7,7 @@ import { getDonateUrl, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Donate",
   description: `Support ${site.name} — every cedi goes directly to young people in Ghana. No black boxes. Full transparency.`,
+  alternates: { canonical: "/donate" },
 };
 
 const IMPACT_TIERS = [
@@ -116,7 +117,7 @@ export default function DonatePage() {
               </li>
             </ul>
           </div>
-          <Card className="bg-brand-950 text-white">
+          <Card tone="dark">
             <h3 className="font-display text-xl font-bold text-white">
               Our numbers (2024)
             </h3>

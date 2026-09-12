@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Section } from "@/components/ui/Section";
-import { PROGRAM_QUERY, sanityFetch, type Program } from "@/lib/sanity";
+import { getPrograms } from "@/lib/supabase";
 import { getDonateUrl, getTallyUrl, site } from "@/lib/site";
 
 const IMPACT_STATS = [
@@ -11,10 +11,12 @@ const IMPACT_STATS = [
   { value: "94%", label: "Would recommend to a friend" },
 ];
 
-// TODO:content — Phase 0 placeholder. The full marketing home page ships in
-// Phase 1 (impact stats, Sanity-driven upcoming-event banner, programs grid).
+// Revalidate every 5 minutes so newly added Supabase programs appear on
+// the static homepage without a full redeploy (ISR). Must stay a literal.
+export const revalidate = 300;
+
 export default async function HomePage() {
-  const programs = await sanityFetch<Program>(PROGRAM_QUERY);
+  const programs = await getPrograms();
 
   return (
     <>
@@ -76,7 +78,7 @@ export default async function HomePage() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {programs.length > 0 ? (
             programs.map((program) => (
-              <Card key={program._id}>
+              <Card key={program.id}>
                 <h3 className="font-display text-xl font-bold text-brand-950">
                   {program.title}
                 </h3>
@@ -90,7 +92,7 @@ export default async function HomePage() {
           ) : (
             <EmptyState
               title="Programs will appear here"
-              description="Once the Sanity dataset is connected, programs are edited in the CMS and appear here automatically."
+              description="Once the Supabase dataset is connected, programs are managed in the database and appear here automatically."
               className="sm:col-span-2 lg:col-span-3"
             />
           )}

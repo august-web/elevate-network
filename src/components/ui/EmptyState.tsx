@@ -7,8 +7,8 @@ type EmptyStateProps = {
 };
 
 /**
- * Graceful empty state shown wherever Sanity has no content yet
- * (unconfigured CMS, empty dataset, or a failed fetch).
+ * Graceful empty state shown wherever the database has no content yet
+ * (unconfigured Supabase, empty tables, or a failed fetch).
  */
 export function EmptyState({
   title = "Content coming soon",

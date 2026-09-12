@@ -7,6 +7,7 @@ import { getTallyUrl, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Programs",
   description: `What ${site.name} actually does — STEM tours, festivals, camps, and mentorship that changes how young people see themselves.`,
+  alternates: { canonical: "/programs" },
 };
 
 const PROGRAMS = [
@@ -70,12 +71,12 @@ export default function ProgramsPage() {
         <div className="grid gap-8 md:grid-cols-2">
           {PROGRAMS.map((program) => (
             <Card key={program.name} className="flex flex-col">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                 <h2 className="font-display text-2xl font-bold text-brand-950">
                   {program.name}
                 </h2>
                 <span
-                  className={`rounded-full px-3 py-1 text-xs font-bold ${
+                  className={`whitespace-nowrap rounded-full px-3 py-1 text-xs font-bold ${
                     program.status === "Active"
                       ? "bg-volt-500/20 text-brand-900"
                       : "bg-brand-100 text-brand-700"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { getDonateUrl, NAV_LINKS, site } from "@/lib/site";
 
 const SOCIALS = [
@@ -24,9 +25,8 @@ const EXPLORE_LINKS = NAV_LINKS.filter((link) => link.href !== "/");
 /** Site-wide footer on the deep navy base. */
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-brand-950 text-brand-100">
-      <div aria-hidden className="absolute inset-0 kente-geometric" />
-      <div className="relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <footer className="bg-brand-950 text-brand-100">
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -119,19 +119,16 @@ export function Footer() {
                 </a>
               </li>
               <li>{site.address}</li>
-              <li>Ghana</li>
             </ul>
-            {/* Newsletter signup — TODO:content: Replace with real Buttondown/Mailchimp embed */}
+            {/* Newsletter signup — stored in Supabase, mailto fallback */}
             <div className="mt-6 rounded-xl border border-volt-500/30 bg-volt-500/10 p-4">
               <p className="font-display text-sm font-bold text-volt-400">
                 Stay in the loop
               </p>
-              <p className="mt-1 text-xs text-brand-200">
+              <p className="mb-3 mt-1 text-xs text-brand-200">
                 Event announcements, reflections, and updates. No spam.
               </p>
-              <p className="mt-2 text-[10px] text-brand-400">
-                Newsletter signup coming soon — we&apos;re setting up Buttondown.
-              </p>
+              <NewsletterForm compact />
             </div>
           </div>
         </div>

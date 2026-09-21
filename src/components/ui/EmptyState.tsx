@@ -18,15 +18,15 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-3 rounded-xl border border-dashed border-brand-300 bg-brand-50/70 px-6 py-12 text-center",
+        "flex flex-col items-center gap-3 rounded-xl border border-dashed border-ink-soft bg-paper/70 px-6 py-12 text-center",
         className,
       )}
     >
-      <h3 className="font-display text-xl font-bold text-brand-900">
+      <h3 className="font-display text-xl font-bold text-ink">
         {title}
       </h3>
       {description ? (
-        <p className="max-w-md text-sm leading-relaxed text-brand-700">
+        <p className="max-w-md text-sm leading-relaxed text-ink-soft">
           {description}
         </p>
       ) : null}

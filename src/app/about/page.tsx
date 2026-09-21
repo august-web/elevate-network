@@ -1,195 +1,70 @@
 import type { Metadata } from "next";
-import { Card } from "@/components/ui/Card";
-import { EmptyState } from "@/components/ui/EmptyState";
-import { Section } from "@/components/ui/Section";
-import { getTeamMembers, type TeamMember } from "@/lib/supabase";
-import { site } from "@/lib/site";
+import { COMMITMENTS } from "@/lib/content";
 
+/** About section — the marigold block with the five-commitment accordion. */
 export const metadata: Metadata = {
   title: "About",
-  description: `The story behind ${site.name} — why we exist, what we believe, and who's making it happen.`,
+  description:
+    "Five commitments, one network — how Elevate Network engages, empowers, enacts, includes and sustains.",
   alternates: { canonical: "/about" },
 };
 
-const VALUES = [
-  {
-    title: "Show up, don't just talk",
-    description:
-      "We measure ourselves by what we build, not what we announce. Every event happens. Every workshop runs. No vaporware.",
-  },
-  {
-    title: "Young people lead",
-    description:
-      "This isn't a youth wing of someone else's vision. We set the agenda, make the calls, and own the outcomes.",
-  },
-  {
-    title: "Local solutions, local people",
-    description:
-      "We don't import playbooks. What works in Adenta might not work in Kumasi — and that's fine. We figure it out here.",
-  },
-  {
-    title: "Radical transparency",
-    description:
-      "Every cedi we spend, every program we run — it's all public. No black boxes. Trust is built, not assumed.",
-  },
-];
-
-// Revalidate every 5 minutes (ISR) so newly added team members appear
-// without a full redeploy. Must stay a literal.
-export const revalidate = 300;
-
-/** Render a team member's photo or a fallback initials badge. */
-function TeamAvatar({ member }: { member: TeamMember }) {
-  if (member.photo_url) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={member.photo_url}
-        alt={member.name}
-        className="h-16 w-16 rounded-full object-cover"
-        width={64}
-        height={64}
-      />
-    );
-  }
-
-  const initials = member.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("");
-
-  return (
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 font-display text-xl font-bold text-brand-600">
-      {initials}
-    </div>
-  );
-}
-
-export default async function AboutPage() {
-  const team = await getTeamMembers();
-
+export default function AboutPage() {
   return (
     <>
-      {/* Hero — why we exist */}
-      <Section className="hero-dark text-white">
-        <div className="max-w-3xl">
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
-            Our story · since 2016
-          </p>
-          <h1 className="mt-4 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl">
-            Changing the culture from the inside out —{" "}
-            <span className="text-gradient-volt">by investing in young people.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-200">
-            Elevate Network is a youth development and business builder focused
-            on helping students and entrepreneurs start and grow. From STEM
-            tours in Ghanaian high schools to programs that help founders launch
-            real ventures, we&apos;re committed to building dreams at every
-            stage of the journey.
-          </p>
+      <section className="block block-marigold page-top" id="about">
+        <div className="corner-accent" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.4">
+            <circle cx="60" cy="60" r="2" />
+            <circle cx="60" cy="60" r="18" />
+            <circle cx="60" cy="60" r="34" />
+            <circle cx="60" cy="60" r="50" />
+            <path d="M60 4 V26 M60 94 V116 M4 60 H26 M94 60 H116 M20 20 L35 35 M85 85 L100 100 M100 20 L85 35 M35 85 L20 100" />
+          </svg>
         </div>
-      </Section>
-
-      {/* Founder story */}
-      <Section>
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <div>
-            <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-flame-500">
-              Founded in 2016 by
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
-              Evans Ofori
-            </h2>
-            <p className="mt-1 text-sm text-brand-500">
-              Founder · featured by VOA Africa 54
-            </p>
-            <h2 className="mt-8 font-display text-2xl font-bold tracking-tight text-brand-950">
-              Augustine Asare
-            </h2>
-            <p className="mt-1 text-sm text-brand-500">
-              Team lead · Adenta, Accra
+        <div className="wrap">
+          <div className="block-intro">
+            <p className="tag">About Elevate Network</p>
+            <h2>Five commitments, one network.</h2>
+            <p>
+              We&apos;re a Ghanaian youth-development nonprofit built on a
+              simple bet: young people don&apos;t need another one-off seminar,
+              they need a network that keeps showing up. Here&apos;s what that
+              means in practice.
             </p>
           </div>
-          <div className="space-y-4 text-brand-700 leading-relaxed">
-            <p>
-              Evans Ofori started Elevate Network in Adenta in 2016 with a
-              simple approach: don&apos;t wait for young people to find you —
-              go to their schools. In 2022, VOA&apos;s Africa 54 featured the
-              STEM school tours bringing coding and robotics workshops to high
-              schools across Ghana.
-            </p>
-            <p>
-              What began as school visits is now a year-round calendar: the
-              Power of You Festival, Campus Edition at universities, Elevate
-              Camp, and a Business Builder track for young founders.
-            </p>
-            <p className="text-brand-950 font-medium">
-              Ten years in, the approach hasn&apos;t changed. Show up. Do the
-              work. Invest in young people.
-            </p>
-          </div>
+          <ul className="accordion">
+            {COMMITMENTS.map((commitment) => (
+              <li className="acc-item" key={commitment.name}>
+                <details>
+                  <summary className="acc-row">
+                    <span className="acc-name">{commitment.name}</span>
+                    <span className="chev" />
+                  </summary>
+                  <div className="acc-body">
+                    <p>{commitment.body}</p>
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ul>
         </div>
-      </Section>
+      </section>
 
-      {/* Values */}
-      <Section className="bg-brand-50">
-        <div className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
-            What we believe
-          </h2>
-          <p className="mt-4 text-brand-700">
-            Not slogans — actual principles we hold ourselves to.
+      <section className="interlude">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photos/ref/p01.jpg"
+          alt="Young women dancing confidently together on an outdoor terracotta-tiled terrace"
+        />
+        <div className="wrap interlude-inner">
+          <p className="interlude-cap">
+            &ldquo;We don&apos;t believe young people need saving. They need a
+            platform — real skills, real mentors, and a real shot at building
+            something that lasts.&rdquo;
           </p>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {VALUES.map((value) => (
-            <Card key={value.title}>
-              <h3 className="font-display text-lg font-bold text-brand-950">
-                {value.title}
-              </h3>
-              <p className="mt-2 text-sm text-brand-700 leading-relaxed">
-                {value.description}
-              </p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      {/* Team */}
-      <Section>
-        <div className="max-w-2xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
-            The people doing the work
-          </h2>
-          <p className="mt-4 text-brand-700">
-            Small team. Big commitment. No one&apos;s here for the title.
-          </p>
-        </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {team.length > 0 ? (
-            team.map((member) => (
-              <Card key={member.id}>
-                <TeamAvatar member={member} />
-                <h3 className="mt-4 font-display text-lg font-bold text-brand-950">
-                  {member.name}
-                </h3>
-                <p className="text-sm font-medium text-flame-500">
-                  {member.role}
-                </p>
-                <p className="mt-2 text-sm text-brand-700 leading-relaxed">
-                  {member.bio}
-                </p>
-              </Card>
-            ))
-          ) : (
-            <EmptyState
-              title="Team profiles are on the way"
-              description="We're updating this section. In the meantime, come to an event — we're the ones setting up the chairs."
-              className="sm:col-span-2 lg:col-span-3"
-            />
-          )}
-        </div>
-      </Section>
+      </section>
     </>
   );
 }

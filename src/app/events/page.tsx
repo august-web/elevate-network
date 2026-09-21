@@ -54,7 +54,7 @@ export default async function EventsPage() {
   return (
     <>
       {/* Hero */}
-      <Section className="bg-brand-950 text-white">
+      <Section className="hero-dark text-white">
         <div className="max-w-3xl">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
             Events
@@ -163,8 +163,8 @@ export default async function EventsPage() {
       ) : (
         <Section>
           <EmptyState
-            title="Events will appear here"
-            description="Once the Supabase dataset is connected and events are added, they'll show up on this page automatically."
+            title="No events listed right now"
+            description="New events are announced on our socials first — follow us on Instagram so you don't miss registration."
           />
         </Section>
       )}

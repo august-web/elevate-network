@@ -8,15 +8,15 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-volt-500 text-brand-950 shadow-[0_8px_30px_-8px_rgba(255,214,10,0.55)] hover:bg-volt-400 hover:shadow-[0_10px_36px_-6px_rgba(255,214,10,0.65)] hover:-translate-y-0.5 active:translate-y-0 active:bg-volt-600",
+    "bg-sunbeam text-ink shadow-[0_8px_30px_-8px_rgba(255,197,61,0.55)] hover:bg-sunbeam hover:shadow-[0_10px_36px_-6px_rgba(255,197,61,0.65)] hover:-translate-y-0.5 active:translate-y-0 active:bg-sunbeam-600",
   secondary:
-    "border-2 border-brand-900 bg-transparent text-brand-900 hover:bg-brand-900 hover:text-white hover:-translate-y-0.5 active:translate-y-0",
+    "border-2 border-ink bg-transparent text-ink hover:bg-ink hover:text-white hover:-translate-y-0.5 active:translate-y-0",
   /** Outlined button for dark (navy) sections — glassy on hover. */
   outline:
-    "border border-white/30 bg-white/5 text-white backdrop-blur-md hover:border-white/60 hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-volt-500",
-  dark: "bg-white text-brand-950 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.4)] hover:bg-brand-100 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-volt-500",
+    "border border-white/30 bg-white/5 text-white backdrop-blur-md hover:border-white/60 hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-sunbeam",
+  dark: "bg-white text-ink shadow-[0_8px_30px_-10px_rgba(0,0,0,0.4)] hover:bg-paper hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-sunbeam",
   ghost:
-    "bg-transparent text-brand-900 underline decoration-volt-500 decoration-2 underline-offset-4 hover:text-brand-700",
+    "bg-transparent text-ink underline decoration-sunbeam decoration-2 underline-offset-4 hover:text-ink-soft",
 } as const;
 
 const sizes = {

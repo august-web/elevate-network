@@ -54,7 +54,7 @@ export default function AboutPage() {
       <section className="interlude">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/photos/ref/p01.jpg"
+          src="/images/interlude-dance.jpg"
           alt="Young women dancing confidently together on an outdoor terracotta-tiled terrace"
         />
         <div className="wrap interlude-inner">

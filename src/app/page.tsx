@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="hero" id="top">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/photos/ref/p00.jpg"
+          src="/images/hero.jpg"
           alt="Young people mid-motion during a Power of You Festival group session at a stone monument site"
         />
         <div className="wrap hero-inner">

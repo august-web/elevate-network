@@ -31,7 +31,7 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-100 bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/40 bg-cream/70 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-cream/60">
       <nav
         aria-label="Main"
         className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"

@@ -36,7 +36,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
     return (
       <p
         role="status"
-        className={`font-medium text-volt-400 ${compact ? "text-sm" : "text-base"}`}
+        className={`font-medium text-sunbeam ${compact ? "text-sm" : "text-base"}`}
       >
         You&apos;re on the list. See you in your inbox. ✓
       </p>
@@ -56,18 +56,18 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@example.com"
-          className="min-w-0 flex-1 rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-brand-400 focus:border-volt-500 focus:outline-none"
+          className="min-w-0 flex-1 rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-ink-soft focus:border-sunbeam focus:outline-none"
         />
         <button
           type="submit"
           disabled={state === "loading"}
-          className="rounded-lg bg-volt-500 px-5 py-2.5 text-sm font-bold text-brand-950 transition-colors hover:bg-volt-400 disabled:opacity-60"
+          className="rounded-lg bg-sunbeam px-5 py-2.5 text-sm font-bold text-ink transition-colors hover:bg-sunbeam disabled:opacity-60"
         >
           {state === "loading" ? "Signing up…" : "Subscribe"}
         </button>
       </div>
       {state === "error" ? (
-        <p className="mt-2 text-xs text-flame-500">
+        <p className="mt-2 text-xs text-marigold">
           Something went wrong. Email us at {site.email} and we&apos;ll add you
           manually.
         </p>

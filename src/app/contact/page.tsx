@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <Section className="bg-brand-950 text-white">
+      <Section className="hero-dark text-white">
         <div className="max-w-3xl">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
             Get in touch
@@ -38,7 +38,7 @@ export default function ContactPage() {
             <h2 className="font-display text-2xl font-bold tracking-tight text-brand-950">
               Send us a message
             </h2>
-            <p className="mt-2 text-brand-600">
+            <p className="mt-2 text-brand-700">
               We&apos;ll get back to you within 48 hours. Usually faster.
             </p>
             <div className="mt-6 flex-1">

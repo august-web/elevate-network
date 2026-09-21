@@ -17,10 +17,12 @@ const organizationJsonLd = {
   email: site.email,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Adenta SDA, Donkor Tawiah Street",
     addressLocality: "Adenta",
     addressRegion: "Accra",
     addressCountry: "GH",
   },
+  foundingDate: "2016",
   sameAs: Object.values(site.socials),
 };
 
@@ -39,7 +41,8 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Elevate Network — Youth Empowerment & Entrepreneurship",
+    default:
+      "Elevate Network — Youth Development & Business Builder in Accra, Ghana",
     template: "%s | Elevate Network",
   },
   description: site.tagline,

@@ -1,22 +1,25 @@
 /**
  * Central place for Elevate Network's identity, links and env-driven URLs.
- * Values flagged `TODO:content` are placeholders the team should confirm.
+ * Contact details come from the original elevate-network.com site.
  */
 export const site = {
   name: "Elevate Network",
-  /** One-line description used in metadata — aligned with the LinkedIn About. */
+  /** One-line description used in metadata. */
   tagline:
-    "Youth development and business builder helping students and entrepreneurs start and grow.",
-  /** Longer mission copy used in heroes — aligned with the LinkedIn About. */
+    "Elevate Network Foundation — engaging, empowering and enacting change with young Ghanaians.",
+  /** Longer mission copy used in heroes. */
   mission:
-    "We're committed to helping students and entrepreneurs build their dreams at any stage of their journey — and to changing the culture from the inside out, by investing in young people.",
-  /** TODO:content — confirm the official contact email before launch. */
-  email: "hello@elevatenetworkhq.com",
-  address:
-    "Adenta SDA, Donkor Tawiah Street, Adenta, Accra 233, Ghana",
+    "We're a Ghanaian youth-development nonprofit built on a simple bet: young people don't need another one-off seminar, they need a network that keeps showing up.",
+  email: "info@elevate-network.com",
+  phone: "+233 53 078 8527",
+  phoneHref: "tel:+233530788527",
+  website: "https://www.elevate-network.com",
+  address: "Dzorshie Street, Adenta Municipality",
+  addressDetail: "Opposite Hometown Pharmacy · MRR7+CX7",
+  addressLocality: "Adenta, Accra, Ghana",
   founded: 2016,
   socials: {
-    instagram: "https://instagram.com/elevatenetworkhq",
+    instagram: "https://www.instagram.com/elevatenetworkhq/?hl=en",
     facebook: "https://facebook.com/elevatenetworkhq",
     linkedin: "https://www.linkedin.com/company/elevatenetwork/",
   },

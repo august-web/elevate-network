@@ -71,7 +71,7 @@ export default function OpengraphImage() {
               marginLeft: 16,
               padding: "8px 20px",
               borderRadius: 999,
-              backgroundColor: "rgba(255,214,10,0.15)",
+              backgroundColor: "rgba(255,197,61,0.15)",
               color: VOLT_500,
               fontSize: 22,
               fontWeight: 600,

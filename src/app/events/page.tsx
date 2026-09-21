@@ -36,9 +36,9 @@ function statusLabel(status: string): string {
 /** Badge style based on whether the event is upcoming or past. */
 function badgeClasses(status: string): string {
   if (status === "past") {
-    return "bg-brand-100 text-brand-600";
+    return "bg-paper text-ink-soft";
   }
-  return "bg-volt-500/20 text-brand-900";
+  return "bg-sunbeam/20 text-ink";
 }
 
 export default async function EventsPage() {
@@ -56,13 +56,13 @@ export default async function EventsPage() {
       {/* Hero */}
       <Section className="hero-dark text-white">
         <div className="max-w-3xl">
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-sunbeam">
             Events
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl">
             Where the work actually happens.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-200">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream">
             Not conferences with bad coffee. Real gatherings where young people
             build skills, make connections, and leave with something tangible.
           </p>
@@ -76,10 +76,10 @@ export default async function EventsPage() {
           {upcoming.length > 0 ? (
             <Section>
               <div className="max-w-2xl">
-                <h2 className="font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
+                <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
                   Coming up
                 </h2>
-                <p className="mt-4 text-brand-700">
+                <p className="mt-4 text-ink-soft">
                   Mark your calendar. Registration links go live before each
                   event.
                 </p>
@@ -93,17 +93,17 @@ export default async function EventsPage() {
                       >
                         {statusLabel(event.status)}
                       </span>
-                      <span className="text-sm text-brand-500">
+                      <span className="text-sm text-ink-soft">
                         {formatDate(event.date)}
                       </span>
                     </div>
-                    <h3 className="mt-4 font-display text-xl font-bold text-brand-950">
+                    <h3 className="mt-4 font-display text-xl font-bold text-ink">
                       {event.title}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-flame-500">
+                    <p className="mt-1 text-sm font-medium text-marigold">
                       {event.location}
                     </p>
-                    <p className="mt-3 text-sm text-brand-700 leading-relaxed">
+                    <p className="mt-3 text-sm text-ink-soft leading-relaxed">
                       {event.description}
                     </p>
                   </Card>
@@ -119,12 +119,12 @@ export default async function EventsPage() {
 
           {/* Past events */}
           {past.length > 0 ? (
-            <Section className="bg-brand-50">
+            <Section className="bg-paper">
               <div className="max-w-2xl">
-                <h2 className="font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
+                <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
                   What we&apos;ve done
                 </h2>
-                <p className="mt-4 text-brand-700">
+                <p className="mt-4 text-ink-soft">
                   Every event happens. Every workshop runs. Here&apos;s the
                   receipts.
                 </p>
@@ -133,25 +133,25 @@ export default async function EventsPage() {
                 {past.map((event) => (
                   <Card key={event.id}>
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-600">
+                      <span className="rounded-full bg-paper px-3 py-1 text-xs font-bold text-ink-soft">
                         Past event
                       </span>
-                      <span className="text-sm text-brand-500">
+                      <span className="text-sm text-ink-soft">
                         {formatDate(event.date)}
                       </span>
-                      <span className="text-sm text-brand-500">
+                      <span className="text-sm text-ink-soft">
                         {event.location}
                       </span>
                       {event.attendees ? (
-                        <span className="text-sm font-semibold text-brand-700">
+                        <span className="text-sm font-semibold text-ink-soft">
                           {event.attendees} attendees
                         </span>
                       ) : null}
                     </div>
-                    <h3 className="mt-3 font-display text-lg font-bold text-brand-950">
+                    <h3 className="mt-3 font-display text-lg font-bold text-ink">
                       {event.title}
                     </h3>
-                    <p className="mt-2 text-sm text-brand-700 leading-relaxed">
+                    <p className="mt-2 text-sm text-ink-soft leading-relaxed">
                       {event.description}
                     </p>
                   </Card>

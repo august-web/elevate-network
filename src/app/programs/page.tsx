@@ -36,6 +36,14 @@ const PROGRAMS = [
     status: "Active",
   },
   {
+    name: "Business Builder",
+    tagline: "From first idea to first customer",
+    description:
+      "Our entrepreneurship track — mentoring, workshops, and network access for young founders at any stage. Whether you're validating an idea or scaling your first venture, we walk the journey with you.",
+    impact: "Supporting founders at every stage of the journey",
+    status: "Active",
+  },
+  {
     name: "Elevate Camp",
     tagline: "Where the real connections happen",
     description:
@@ -49,7 +57,7 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Hero */}
-      <Section className="bg-brand-950 text-white">
+      <Section className="hero-dark text-white">
         <div className="max-w-3xl">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
             What we do
@@ -100,7 +108,7 @@ export default function ProgramsPage() {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-brand-950 text-white">
+      <Section className="hero-dark text-white">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Want to join the next one?

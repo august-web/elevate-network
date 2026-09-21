@@ -49,15 +49,15 @@ export function ContactForm() {
   }
 
   const inputClasses =
-    "w-full rounded-lg border border-brand-200 bg-white px-4 py-2.5 text-sm text-brand-950 placeholder:text-brand-400 focus:border-brand-500 focus:outline-none";
+    "w-full rounded-lg border border-cream bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft focus:border-ink-soft focus:outline-none";
 
   if (state === "done") {
     return (
-      <div className="rounded-xl border border-volt-500/40 bg-volt-500/10 p-8 text-center">
-        <p className="font-display text-lg font-bold text-brand-950">
+      <div className="rounded-xl border border-sunbeam/40 bg-sunbeam/10 p-8 text-center">
+        <p className="font-display text-lg font-bold text-ink">
           Message sent. ✓
         </p>
-        <p className="mt-2 text-sm text-brand-700">
+        <p className="mt-2 text-sm text-ink-soft">
           Thanks, {form.name.split(" ")[0] || "friend"} — we&apos;ll get back
           to you within 48 hours. Usually faster.
         </p>
@@ -68,13 +68,13 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl border border-brand-200 bg-white p-6 sm:p-8"
+      className="rounded-xl border border-cream bg-white p-6 sm:p-8"
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label
             htmlFor="contact-name"
-            className="mb-1.5 block text-sm font-medium text-brand-950"
+            className="mb-1.5 block text-sm font-medium text-ink"
           >
             Name
           </label>
@@ -91,7 +91,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="contact-email"
-            className="mb-1.5 block text-sm font-medium text-brand-950"
+            className="mb-1.5 block text-sm font-medium text-ink"
           >
             Email
           </label>
@@ -109,9 +109,9 @@ export function ContactForm() {
       <div className="mt-4">
         <label
           htmlFor="contact-subject"
-          className="mb-1.5 block text-sm font-medium text-brand-950"
+          className="mb-1.5 block text-sm font-medium text-ink"
         >
-          Subject <span className="text-brand-400">(optional)</span>
+          Subject <span className="text-ink-soft">(optional)</span>
         </label>
         <input
           id="contact-subject"
@@ -125,7 +125,7 @@ export function ContactForm() {
       <div className="mt-4">
         <label
           htmlFor="contact-message"
-          className="mb-1.5 block text-sm font-medium text-brand-950"
+          className="mb-1.5 block text-sm font-medium text-ink"
         >
           Message
         </label>
@@ -140,7 +140,7 @@ export function ContactForm() {
         />
       </div>
       {state === "error" ? (
-        <p className="mt-3 text-sm text-flame-500" role="alert">
+        <p className="mt-3 text-sm text-marigold" role="alert">
           Something went wrong sending your message. Please email us directly
           at{" "}
           <a href={`mailto:${site.email}`} className="underline">
@@ -152,7 +152,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="mt-6 w-full rounded-lg bg-brand-950 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-900 disabled:opacity-60 sm:w-auto"
+        className="mt-6 w-full rounded-lg bg-ink px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-ink disabled:opacity-60 sm:w-auto"
       >
         {state === "loading" ? "Sending…" : "Send message →"}
       </button>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Work_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Footer } from "@/components/layout/Footer";
@@ -17,7 +17,7 @@ const organizationJsonLd = {
   email: site.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Adenta SDA, Donkor Tawiah Street",
+    streetAddress: "Dzorshie Street, Adenta Municipality",
     addressLocality: "Adenta",
     addressRegion: "Accra",
     addressCountry: "GH",
@@ -26,15 +26,25 @@ const organizationJsonLd = {
   sameAs: Object.values(site.socials),
 };
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  axes: ["opsz"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-work-sans",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -67,18 +77,21 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#110c2a",
+  themeColor: "#1c1206",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${workSans.variable} ${plexMono.variable}`}
+    >
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-volt-500 focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-brand-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-sunbeam focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-ink"
         >
           Skip to content
         </a>

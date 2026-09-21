@@ -8,13 +8,13 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-volt-500 text-brand-950 hover:bg-volt-400 active:bg-volt-600",
+    "bg-volt-500 text-brand-950 shadow-[0_8px_30px_-8px_rgba(255,214,10,0.55)] hover:bg-volt-400 hover:shadow-[0_10px_36px_-6px_rgba(255,214,10,0.65)] hover:-translate-y-0.5 active:translate-y-0 active:bg-volt-600",
   secondary:
-    "border-2 border-brand-900 bg-transparent text-brand-900 hover:bg-brand-900 hover:text-white",
-  /** Outlined button for dark (navy) sections. */
+    "border-2 border-brand-900 bg-transparent text-brand-900 hover:bg-brand-900 hover:text-white hover:-translate-y-0.5 active:translate-y-0",
+  /** Outlined button for dark (navy) sections — glassy on hover. */
   outline:
-    "border-2 border-white/90 bg-transparent text-white hover:bg-white hover:text-brand-950 focus-visible:outline-volt-500",
-  dark: "bg-white text-brand-950 hover:bg-brand-100 focus-visible:outline-volt-500",
+    "border border-white/30 bg-white/5 text-white backdrop-blur-md hover:border-white/60 hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-volt-500",
+  dark: "bg-white text-brand-950 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.4)] hover:bg-brand-100 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-volt-500",
   ghost:
     "bg-transparent text-brand-900 underline decoration-volt-500 decoration-2 underline-offset-4 hover:text-brand-700",
 } as const;
@@ -54,7 +54,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-lg font-semibold whitespace-nowrap transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-all duration-300",
     variants[variant],
     sizes[size],
     className,

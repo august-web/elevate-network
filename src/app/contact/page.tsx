@@ -15,7 +15,7 @@ export default function ContactPage() {
     <section className="missionband page-top" id="contact">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/photos/ref/p27.jpg"
+        src="/images/mission-circle.jpg"
         alt="A facilitator speaking with a circle of young people seated on terracotta steps"
       />
       <div className="wrap missionband-inner">

@@ -71,19 +71,21 @@ export default async function AboutPage() {
   return (
     <>
       {/* Hero — why we exist */}
-      <Section className="bg-brand-950 text-white">
+      <Section className="hero-dark text-white">
         <div className="max-w-3xl">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-volt-500">
-            Our story
+            Our story · since 2016
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl">
-            We got tired of waiting.
+            Changing the culture from the inside out —{" "}
+            <span className="text-gradient-volt">by investing in young people.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-200">
-            Elevate Network started because someone had to do it. Young people
-            in Ghana have ideas, energy, and talent — but not always the
-            mentorship, the space, or the confidence to act on it. So we built
-            the thing we wished existed.
+            Elevate Network is a youth development and business builder focused
+            on helping students and entrepreneurs start and grow. From STEM
+            tours in Ghanaian high schools to programs that help founders launch
+            real ventures, we&apos;re committed to building dreams at every
+            stage of the journey.
           </p>
         </div>
       </Section>
@@ -93,29 +95,37 @@ export default async function AboutPage() {
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-flame-500">
-              Founded by
+              Founded in 2016 by
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-950 sm:text-4xl">
+              Evans Ofori
+            </h2>
+            <p className="mt-1 text-sm text-brand-500">
+              Founder · featured by VOA Africa 54
+            </p>
+            <h2 className="mt-8 font-display text-2xl font-bold tracking-tight text-brand-950">
               Augustine Asare
             </h2>
             <p className="mt-1 text-sm text-brand-500">
-              Adenta, Accra — since 2024
+              Team lead · Adenta, Accra
             </p>
           </div>
           <div className="space-y-4 text-brand-700 leading-relaxed">
             <p>
-              &ldquo;I kept seeing the same thing: brilliant young people in my
-              community who had no idea what was possible for them — not because
-              they lacked talent, but because nobody showed them the path.&rdquo;
+              Evans Ofori started Elevate Network in Adenta in 2016 with a
+              simple approach: don&apos;t wait for young people to find you —
+              go to their schools. In 2022, VOA&apos;s Africa 54 featured the
+              STEM school tours bringing coding and robotics workshops to high
+              schools across Ghana.
             </p>
             <p>
-              &ldquo;So I started Elevate. Not as a charity that hands things
-              out, but as a platform where young people build real skills, meet
-              real mentors, and create real things. The first event was just 30
-              people in a borrowed room. Now we&apos;ve reached thousands.&rdquo;
+              What began as school visits is now a year-round calendar: the
+              Power of You Festival, Campus Edition at universities, Elevate
+              Camp, and a Business Builder track for young founders.
             </p>
             <p className="text-brand-950 font-medium">
-              &ldquo;We&apos;re just getting started.&rdquo;
+              Ten years in, the approach hasn&apos;t changed. Show up. Do the
+              work. Invest in young people.
             </p>
           </div>
         </div>
@@ -173,8 +183,8 @@ export default async function AboutPage() {
             ))
           ) : (
             <EmptyState
-              title="Team members will appear here"
-              description="Once the Supabase dataset is connected and team members are added, they'll show up on this page automatically."
+              title="Team profiles are on the way"
+              description="We're updating this section. In the meantime, come to an event — we're the ones setting up the chairs."
               className="sm:col-span-2 lg:col-span-3"
             />
           )}

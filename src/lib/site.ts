@@ -4,19 +4,21 @@
  */
 export const site = {
   name: "Elevate Network",
-  /** One-line description used in metadata. */
+  /** One-line description used in metadata — aligned with the LinkedIn About. */
   tagline:
-    "Youth-led nonprofit building the future of Ghana — one bold event, one classroom, one idea at a time.",
-  /** Longer mission copy used in heroes. */
+    "Youth development and business builder helping students and entrepreneurs start and grow.",
+  /** Longer mission copy used in heroes — aligned with the LinkedIn About. */
   mission:
-    "We're young Ghanaians who got tired of waiting for someone else to fix things. So we started building — mentorship programs, STEM workshops, festivals that actually matter. No imported blueprints. Just the work.",
+    "We're committed to helping students and entrepreneurs build their dreams at any stage of their journey — and to changing the culture from the inside out, by investing in young people.",
   /** TODO:content — confirm the official contact email before launch. */
   email: "hello@elevatenetworkhq.com",
-  address: "Adenta, Accra, Ghana",
+  address:
+    "Adenta SDA, Donkor Tawiah Street, Adenta, Accra 233, Ghana",
+  founded: 2016,
   socials: {
     instagram: "https://instagram.com/elevatenetworkhq",
     facebook: "https://facebook.com/elevatenetworkhq",
-    linkedin: "https://linkedin.com/company/elevatenetworkhq",
+    linkedin: "https://www.linkedin.com/company/elevatenetwork/",
   },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   donateUrl: process.env.NEXT_PUBLIC_PAYSTACK_DONATE_URL ?? null,
